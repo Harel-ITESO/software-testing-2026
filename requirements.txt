@@ -1,1 +1,14 @@
-pre-commit
+cfgv==3.5.0
+distlib==0.4.0
+filelock==3.24.3
+identify==2.6.16
+iniconfig==2.3.0
+nodeenv==1.10.0
+packaging==26.0
+platformdirs==4.9.2
+pluggy==1.6.0
+pre_commit==4.5.1
+Pygments==2.19.2
+pytest==9.0.2
+PyYAML==6.0.3
+virtualenv==20.39.0
