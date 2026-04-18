@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - name: Install Python dependencies
-        run: python -m pip install coverage requests
-      - name: Run tests with coverage
-        run: coverage run --branch -m unittest discover
+        run: python -m pip install coverage requests pytest
+      - name: Run pytest with coverage
+        run: coverage run --branch -m pytest
       - name: Check code coverage
         run: coverage report --fail-under=22 --omit=/usr/lib/python3/*,*/students/*,*/test_*
