@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "name": "statement after one deposit",
+      "dates": ["01/04/2014"],
+      "actions": [
+        {"type": "deposit", "amount": 1000}
+      ],
+      "expected_lines": [
+        "DATE | AMOUNT | BALANCE",
+        "01/04/2014 | 1000.00 | 1000.00"
+      ]
+    },
+    {
+      "name": "statement after one withdrawal",
+      "dates": ["02/04/2014"],
+      "actions": [
+        {"type": "withdraw", "amount": 100}
+      ],
+      "expected_lines": [
+        "DATE | AMOUNT | BALANCE",
+        "02/04/2014 | -100.00 | -100.00"
+      ]
+    },
+    {
+      "name": "statement after deposits and withdrawals",
+      "dates": ["01/04/2014", "02/04/2014", "10/04/2014"],
+      "actions": [
+        {"type": "deposit", "amount": 1000},
+        {"type": "withdraw", "amount": 100},
+        {"type": "deposit", "amount": 500}
+      ],
+      "expected_lines": [
+        "DATE | AMOUNT | BALANCE",
+        "10/04/2014 | 500.00 | 1400.00",
+        "02/04/2014 | -100.00 | 900.00",
+        "01/04/2014 | 1000.00 | 1000.00"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "scan_cases": [
+    {
+      "name": "scan known barcode 12345",
+      "barcode": "12345",
+      "expected": "$7.25"
+    },
+    {
+      "name": "scan known barcode 23456",
+      "barcode": "23456",
+      "expected": "$12.50"
+    },
+    {
+      "name": "scan unknown barcode",
+      "barcode": "99999",
+      "expected": "Error: barcode not found"
+    },
+    {
+      "name": "scan empty barcode",
+      "barcode": "",
+      "expected": "Error: empty barcode"
+    }
+  ],
+  "total_cases": [
+    {
+      "name": "total one known item",
+      "barcodes": ["12345"],
+      "expected": "$7.25"
+    },
+    {
+      "name": "total two known items",
+      "barcodes": ["12345", "23456"],
+      "expected": "$19.75"
+    },
+    {
+      "name": "total repeated items",
+      "barcodes": ["12345", "12345", "23456"],
+      "expected": "$27.00"
+    },
+    {
+      "name": "total fails for unknown barcode",
+      "barcodes": ["12345", "99999", "23456"],
+      "expected": "Error: barcode not found"
+    },
+    {
+      "name": "total fails for empty barcode",
+      "barcodes": ["12345", "", "23456"],
+      "expected": "Error: empty barcode"
+    }
+  ]
+}
