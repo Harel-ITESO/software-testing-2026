@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "name": "returns no results for empty search",
+      "search_text": "",
+      "expected": []
+    },
+    {
+      "name": "returns no results for one character",
+      "search_text": "a",
+      "expected": []
+    },
+    {
+      "name": "returns cities matching prefix",
+      "search_text": "Va",
+      "expected": ["Valencia", "Vancouver"]
+    },
+    {
+      "name": "search is case insensitive",
+      "search_text": "va",
+      "expected": ["Valencia", "Vancouver"]
+    },
+    {
+      "name": "search works with inner fragments",
+      "search_text": "ape",
+      "expected": ["Budapest"]
+    },
+    {
+      "name": "search finds partial city names",
+      "search_text": "York",
+      "expected": ["New York City"]
+    },
+    {
+      "name": "asterisk returns all cities",
+      "search_text": "*",
+      "expected": [
+        "Paris",
+        "Budapest",
+        "Skopje",
+        "Rotterdam",
+        "Valencia",
+        "Vancouver",
+        "Amsterdam",
+        "Vienna",
+        "Sydney",
+        "New York City",
+        "London",
+        "Bangkok",
+        "Hong Kong",
+        "Dubai",
+        "Rome",
+        "Istanbul"
+      ]
+    }
+  ]
+}
