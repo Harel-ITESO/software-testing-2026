@@ -11,4 +11,6 @@ pre_commit==4.5.1
 Pygments==2.19.2
 pytest==9.0.2
 PyYAML==6.0.3
+behave==1.2.6
+selenium==4.31.0
 virtualenv==20.39.0
